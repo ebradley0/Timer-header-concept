@@ -3,7 +3,7 @@
 
 typedef struct timer_s etimer_t;
 
-typedef int (*timer_command)(etimer_t *timer); //
+typedef int (*timer_command)(etimer_t *timer); // creates a typedef that takes in a pointer to etimer_t and returns an int. Uses timer commands as well
 
 struct timer_s // commands and info for use in object (timer)
 {

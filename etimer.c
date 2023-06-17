@@ -14,7 +14,7 @@ int TIMER_STATUS = TIMER_OFF; // Default to being off
 time_t startime;
 time_t endtime;
 
-static int timerstart(etimer_t *timer)
+static int timerstart(etimer_t *timer) //  Start the timer
 {
 
     startime = time(NULL); // Get the time
@@ -24,7 +24,7 @@ static int timerstart(etimer_t *timer)
     return 0;
 }
 
-static int timerend(etimer_t *timer)
+static int timerend(etimer_t *timer) // End the timer
 {
     endtime = time(NULL); // Get the time
     printf("TIME LOGGED - %ld\n", endtime);
@@ -34,7 +34,7 @@ static int timerend(etimer_t *timer)
 
 int timer_init(etimer_t *timer) // Telling the program what to do at each adress when acessed.
 {
-    timer->start = timerstart;
+    timer->start = timerstart; // Set the start and end functions to the timerstart and timerend functions
     timer->end = timerend;
     return 0;
 }
